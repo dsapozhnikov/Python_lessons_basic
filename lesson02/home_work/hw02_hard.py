@@ -1,8 +1,28 @@
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
-
+print('\ntask1-hard\n')
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
+
+def equ(x):
+   tmplist = equation.split(" ")
+   print(tmplist)
+   del tmplist[0:2]
+   string = list(tmplist[0])
+   tmplist.pop(0)
+   string2 = ''.join(tmplist)
+   for i, v in enumerate(string):
+         if v == 'x':
+          string[i] = str(x)
+          if len(string)>1:
+                string.insert(i,'*')
+
+   reslist = ''.join(string)+string2
+   print('y=: ' + str(eval(reslist)))
+
+
+equ(2.5)
+
 # вычислите и выведите y
 
 
